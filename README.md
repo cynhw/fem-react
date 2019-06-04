@@ -14,10 +14,10 @@ Things I've learned along the way:
 6. *kind of* learned how State works in React, will need to do more on that for sure
 
 #### Tools (growing list):
-[prettier](https://prettier.io/)
-[ESLint](https://eslint.org/)
-[Parcel](https://parceljs.org/)
-[axios](https://github.com/axios/axios)
+- [prettier](https://prettier.io/)
+- [ESLint](https://eslint.org/)
+- [Parcel](https://parceljs.org/)
+- [axios](https://github.com/axios/axios)
 
 #### Data:
 [NPS Developer Resources](https://www.nps.gov/subjects/developer/index.htm)
