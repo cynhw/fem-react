@@ -1,19 +1,22 @@
 import React from "react";
 
-export const Park = props => {
-  // return React.createElement("div", {}, [
-  //   React.createElement("h1", {}, props.name),
-  //   React.createElement("h2", {}, props.city),
-  //   React.createElement("h2", {}, props.state)
-  // ]);
+class Park extends React.Component {
+  render() {
+    const { name, state, description, image } = this.props;
+    console.log(name);
 
-  return (
-    <div>
-      <h1>{props.name}</h1>
-      <h2>{props.state}</h2>
-      <h2>{props.description}</h2>
-    </div>
-  );
-};
+    return (
+      <div className="pet">
+        <div className="image-container">
+          <img className="park-image" src={image} />
+        </div>
+        <div className="info">
+          <h1>{name} - {state}</h1>
+          <p>{description}</p>
+        </div>
+      </div>
+    )
+  }
+}
 
 export default Park;
