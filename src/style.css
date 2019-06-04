@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Gloria+Hallelujah&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Montserrat&display=swap');
 
 * {
   box-sizing: border-box;
@@ -8,12 +8,12 @@
 body {
   background-color: #FFFFFF;
   margin: 30px;
-  font-family: "Raleway";
+  font-family: "Montserrat";
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: "Gloria Hallelujah";
-}
+/* h1, h2, h3, h4, h5, h6 {
+  font-family: "Space Mono";
+} */
 
 .search,
 .details,
@@ -27,20 +27,20 @@ h1, h2, h3, h4, h5, h6 {
 
 .pet {
   width: 100%;
-  height: 100px;
+  height: 300px;
   display: block;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin: 15px 0;
 }
 
-.pet img {
-  width: 100px;
+.park-image {
+  width: 300px;
   min-height: 100px;
 }
 
 .info {
   float: left;
-  height: 100px;
+  height: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -48,13 +48,13 @@ h1, h2, h3, h4, h5, h6 {
 
 .image-container {
   clip-path: circle(50% at 50% 50%);
-  width: 100px;
-  height: 100px;
+  width: 200px;
+  height: 200px;
   float: left;
   margin-right: 20px;
 }
 
-.pet h1 {
+/* .pet h1 {
   white-space: nowrap;
   font-weight: normal;
   font-size: 30px;
@@ -68,7 +68,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   font-size: 20px;
   margin: 0;
-}
+} */
 
 header a {
   color: #f2af29;
