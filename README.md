@@ -1,4 +1,8 @@
+## fem-react
+
 This is a repo documenting the progress as I follow along the Intro to React v4 course on Frontend Masters.
+
+Instead of using the PetfinderAPI, I decided to branch out and use axios as the HTTP client for the browser (still learning)
 
 Things I've learned along the way:
 
@@ -9,4 +13,11 @@ Things I've learned along the way:
 5. Edit your App.js, please go ahead and edit your Park.js file to make sure your naming conventions are up to date
 6. *kind of* learned how State works in React, will need to do more on that for sure
 
-Tools I explored that I never used: prettier, aslant, parcel, axios
+#### Tools (growing list):
+[prettier](https://prettier.io/)
+[ESLint](https://eslint.org/)
+[Parcel](https://parceljs.org/)
+[axios](https://github.com/axios/axios)
+
+#### Data:
+[NPS Developer Resources](https://www.nps.gov/subjects/developer/index.htm)
