@@ -27467,22 +27467,66 @@ module.exports = require('./lib/axios');
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.default = exports.Park = void 0;
+exports.default = void 0;
 
 var _react = _interopRequireDefault(require("react"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Park = function Park(props) {
-  // return React.createElement("div", {}, [
-  //   React.createElement("h1", {}, props.name),
-  //   React.createElement("h2", {}, props.city),
-  //   React.createElement("h2", {}, props.state)
-  // ]);
-  return _react.default.createElement("div", null, _react.default.createElement("h1", null, props.name), _react.default.createElement("h2", null, props.state), _react.default.createElement("h2", null, props.description));
-};
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
-exports.Park = Park;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var Park =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Park, _React$Component);
+
+  function Park() {
+    _classCallCheck(this, Park);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(Park).apply(this, arguments));
+  }
+
+  _createClass(Park, [{
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          name = _this$props.name,
+          state = _this$props.state,
+          description = _this$props.description,
+          image = _this$props.image;
+      console.log(name);
+      return _react.default.createElement("div", {
+        className: "pet"
+      }, _react.default.createElement("div", {
+        className: "image-container"
+      }, _react.default.createElement("img", {
+        className: "park-image",
+        src: image
+      })), _react.default.createElement("div", {
+        className: "info"
+      }, _react.default.createElement("h1", null, name, " - ", state), _react.default.createElement("p", null, description)));
+    }
+  }]);
+
+  return Park;
+}(_react.default.Component);
+
 var _default = Park;
 exports.default = _default;
 },{"react":"../node_modules/react/index.js"}],"App.js":[function(require,module,exports) {
@@ -27494,7 +27538,7 @@ var _reactDom = require("react-dom");
 
 var _axios = _interopRequireDefault(require("axios"));
 
-var _Park = require("./Park");
+var _Park = _interopRequireDefault(require("./Park"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27540,29 +27584,35 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios.default.get("https://developer.nps.gov/api/v1/parks?stateCode=WA&fields=name&fields=&api_key=" + "".concat(nps)) // https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/
+      _axios.default.get("https://developer.nps.gov/api/v1/parks?parkCode=&stateCode=WA&limit=5&fields=images&api_key=" + "".concat(nps)) // https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/
       .then(function (res) {
         return res.data.data.map(function (park) {
           return {
             description: "".concat(park.description),
             fullname: "".concat(park.fullName),
-            states: "".concat(park.states)
+            states: "".concat(park.states),
+            parkcode: "".concat(park.parkCode),
+            image: "".concat(park.images[0].url)
           };
         });
       }).then(function (parks) {
         _this2.setState({
           parks: parks
         });
+
+        console.log(parks);
       });
     }
   }, {
     key: "render",
     value: function render() {
       return _react.default.createElement("div", null, _react.default.createElement("h1", null, "National Parks"), _react.default.createElement("div", null, this.state.parks.map(function (park) {
-        return _react.default.createElement(_Park.Park, {
+        return _react.default.createElement(_Park.default, {
+          key: park.parkcode,
           name: park.fullname,
           state: park.states,
-          description: park.description
+          description: park.description,
+          image: park.image
         });
       })));
     }
@@ -27600,7 +27650,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "61080" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52122" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
