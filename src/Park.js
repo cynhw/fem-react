@@ -9,9 +9,9 @@ export const Park = props => {
 
   return (
     <div>
-      <h1>{ props.name }</h1>
-      <h2>{ props.city }</h2>
-      <h2>{ props.state }</h2>
+      <h1>{props.name}</h1>
+      <h2>{props.state}</h2>
+      <h2>{props.description}</h2>
     </div>
   );
 };
