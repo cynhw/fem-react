@@ -17,7 +17,7 @@ class App extends React.Component {
   componentDidMount() {
     axios
       .get(
-        "https://developer.nps.gov/api/v1/parks?parkCode=&stateCode=WA&limit=5&fields=images&api_key=" +
+        "https://developer.nps.gov/api/v1/parks?stateCode=wa&fields=images&api_key=" +
           `${nps}`
       )
 
@@ -28,7 +28,7 @@ class App extends React.Component {
           fullname: `${park.fullName}`,
           states: `${park.states}`,
           parkcode: `${park.parkCode}`,
-          image: `${park.images[0].url}`
+          image: `${park.images[0] ? park.images[0].url : "No Image"}`
         }))
       )
       .then(parks => {

@@ -27520,7 +27520,7 @@ function (_React$Component) {
         src: image
       })), _react.default.createElement("div", {
         className: "info"
-      }, _react.default.createElement("h1", null, name, " - ", state), _react.default.createElement("p", null, description)));
+      }, _react.default.createElement("h3", null, name, " - ", state), _react.default.createElement("p", null, description)));
     }
   }]);
 
@@ -27584,7 +27584,7 @@ function (_React$Component) {
     value: function componentDidMount() {
       var _this2 = this;
 
-      _axios.default.get("https://developer.nps.gov/api/v1/parks?parkCode=&stateCode=WA&limit=5&fields=images&api_key=" + "".concat(nps)) // https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/
+      _axios.default.get("https://developer.nps.gov/api/v1/parks?stateCode=wa&fields=images&api_key=" + "".concat(nps)) // https://css-tricks.com/using-data-in-react-with-the-fetch-api-and-axios/
       .then(function (res) {
         return res.data.data.map(function (park) {
           return {
@@ -27592,7 +27592,7 @@ function (_React$Component) {
             fullname: "".concat(park.fullName),
             states: "".concat(park.states),
             parkcode: "".concat(park.parkCode),
-            image: "".concat(park.images[0].url)
+            image: "".concat(park.images[0] ? park.images[0].url : "No Image")
           };
         });
       }).then(function (parks) {
@@ -27650,7 +27650,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52122" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57288" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

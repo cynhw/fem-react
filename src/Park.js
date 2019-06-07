@@ -11,7 +11,7 @@ class Park extends React.Component {
           <img className="park-image" src={image} />
         </div>
         <div className="info">
-          <h1>{name} - {state}</h1>
+          <h3>{name} - {state}</h3>
           <p>{description}</p>
         </div>
       </div>
