@@ -51,6 +51,7 @@ class Results extends React.Component {
               description={park.description}
               image={park.image}
               designation={park.designation}
+              id={park.parkcode}
             />
           );
         })}
