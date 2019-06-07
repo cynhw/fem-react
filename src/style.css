@@ -15,10 +15,15 @@ body {
   font-family: "Space Mono";
 } */
 
+.parks {
+  display: block;
+  justify-content: center;
+}
+
 .search,
 .details,
 .search-params {
-  background-color: #c4b2bc;
+  background-color: #cacaca;
   width: 95%;
   margin: 0 auto;
   padding: 15px;
