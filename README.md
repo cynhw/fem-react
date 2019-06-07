@@ -12,6 +12,7 @@ Things I've learned along the way:
 4. took me so long to figure out, but I finally figured out AXIOS! with react using a css-tricks tutorial - go me!
 5. Edit your App.js, please go ahead and edit your Park.js file to make sure your naming conventions are up to date
 6. *kind of* learned how State works in React, will need to do more on that for sure
+7. *bumpy ride* but finally figured out how to fetch data to render just one result on details.js page
 
 #### Tools (growing list):
 - [prettier](https://prettier.io/)
