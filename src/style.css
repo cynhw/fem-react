@@ -43,6 +43,11 @@ body {
   height: 200px;
 }
 
+.park-detail-image {
+  width: 50%;
+  height: 50%;
+}
+
 .image-container {
   clip-path: circle(50% at 50% 50%);
   width: 200px;
