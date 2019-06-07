@@ -1,12 +1,12 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 class Park extends React.Component {
   render() {
-    const { name, state, description, image, designation } = this.props;
-    console.log(name);
+    const { name, state, description, image, designation, id } = this.props;
 
     return (
-      <div className="parks">
+      <Link to={`/details/${id}`} className="parks">
         <div className="image-container">
           <img className="park-image" src={image} />
         </div>
@@ -19,7 +19,7 @@ class Park extends React.Component {
           </h4>
           <p>{description}</p>
         </div>
-      </div>
+      </Link>
     );
   }
 }
