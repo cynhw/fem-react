@@ -28,6 +28,7 @@ class Results extends React.Component {
           fullname: `${park.fullName}`,
           states: `${park.states}`,
           parkcode: `${park.parkCode}`,
+          // media: `${park.images}`,
           image: `${park.images[0] ? park.images[0].url : "No Image"}`,
           designation: `${park.designation}`
         }))
