@@ -5,14 +5,10 @@ import axios from "axios";
 const nps = process.env.API_KEY;
 
 class Details extends React.Component {
-  constructor (props) {
-    super(props);
-
-    this.state = {
-      loading: true,
-    }
-  }
-
+  state = {
+    loading: true,
+  };
+  
   componentDidMount() {
     const id = this.props.id;
     console.log(id);
