@@ -12,7 +12,6 @@ class Details extends React.Component {
 
   componentDidMount() {
     const id = this.props.id;
-    console.log(id);
     axios
       .get(
         "https://developer.nps.gov/api/v1/parks?parkCode=" + id + "&stateCode=wa&fields=images&api_key=" +
